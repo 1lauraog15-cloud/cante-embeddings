@@ -1,0 +1,15 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Audio crudo (no redistribuible / demasiado pesado)
+data/raw/**/*.wav
+data/raw/**/*.mp3
+data/raw/TONAS/
+data/raw/Cante100audio/
+data/raw/*.zip
+data/raw/__MACOSX/
+
+# Embeddings de ventana: artefacto intermedio pesado (334MB), regenerable desde 03_audio_preprocessing.ipynb
+data/processed/window_embeddings/
