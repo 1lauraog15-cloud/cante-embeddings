@@ -13,3 +13,12 @@ data/raw/__MACOSX/
 
 # Embeddings de ventana: artefacto intermedio pesado (334MB), regenerable desde 03_audio_preprocessing.ipynb
 data/processed/window_embeddings/
+
+# Artefactos derivados del audio — no redistribuibles bajo los términos de TONAS y cante100 (COFLA/MTG-UPF)
+# Los archivos permanecen en disco local para uso durante el desarrollo; regenerables ejecutando 03 y 04.
+data/processed/recording_embeddings.npz
+data/processed/final_results.npz
+data/processed/projection_head_final.pt
+
+# Rutas absolutas de máquina local — no útil para terceros
+data/processed/train_test_split_with_paths.csv
