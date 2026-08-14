@@ -9,6 +9,10 @@ but applied to the expressive identity of flamenco cantaores.
 **Result**: AUC 0.80, EER ~30% on held-out closed-set pairwise verification — a modest but
 genuine, reproducible improvement over the frozen OpenL3 pretrained baseline. The improvement
 is real; its practical significance at this dataset scale is limited and is reported as such.
+Fine-tuning also raises the cosine silhouette score (cantaor labels) from −0.108 to +0.026
+within cante100 recordings (permutation test, p < 0.001) — a second line of quantitative
+evidence, independent of the pairwise protocol, pointing in the same direction: modest
+cantaor structure, not clean separation.
 
 **This project interrogates its own results.** `05_confound_probe.ipynb` is a post-hoc
 diagnostic probe, included as a core deliverable, that tests whether the embedding space is
@@ -59,6 +63,13 @@ two or more recordings — training a deep audio encoder from scratch is impract
   space sits at cosine distance 0.1185; the closest within-TONAS pair sits at 0.0455. The
   acoustic homogeneity of TONAS recordings (a cappella, similar era) compresses that
   neighbourhood of the space in ways that interact with cantaor proximity estimates.
+
+- **Convergent evidence from silhouette gap.** The fine-tuned full-set silhouette (−0.1220)
+  sits 0.1479 points below the cante100-only score (+0.0259). The dimension that separates
+  TONAS from cante100 recordings (source probe: 0.979 balanced accuracy) competes with the
+  cantaor-identity dimension and disperses within-cantaor clusters — a third convergent
+  signal, alongside the source probe and the confusion geometry, that the domain confound
+  operates at the representation level.
 
 - **Palo imbalance in the split**: the closed-set protocol does not guarantee palo balance
   per cantaor; a cantaor represented only by *Martinetes* in test and only by *Debla* in
